@@ -6,7 +6,7 @@ The cloud resources for this project were created using Terraform. The configura
 
 When deployed, this application is served out of an S3 bucket with a CloudFront distribution sitting in front of it.
 
-The corresponding serverless backend for this project can be seen [here](https://github.com/grantmcd/ip-info-ui).
+The corresponding serverless backend for this project can be seen [here](https://github.com/grantmcd/ip-info-api).
 
 ## CI
 
@@ -26,4 +26,8 @@ This project uses a husky precommit hook to properly format the staged code.
 
 If I continued to work on this here's a short list of some things I'd want to add:
 
-\*
+- Dark Theme :)
+- Enable the service worker and enable precaching, PWA support
+- Improve tests w/ service mocking
+  - Currently they're only barebones Jest snapshot tests
+- Debug the webgl globe. It doesn't load consistently for some reason.
