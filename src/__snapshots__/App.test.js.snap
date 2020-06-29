@@ -40,6 +40,7 @@ exports[`App 1`] = `
               name="ipAddress"
               onBlur={[Function]}
               onChange={[Function]}
+              placeholder="75.34.225.8"
               type="text"
               value=""
             />
