@@ -14,8 +14,9 @@ import {
 import * as Yup from "yup";
 
 const App = () => {
-  const [ipAddress, setIpAddress] = useState("");
+  const initialIpAddress = "75.34.225.8";
 
+  const [ipAddress, setIpAddress] = useState(initialIpAddress);
   const FormSchema = Yup.object().shape({
     ipAddress: Yup.string()
       .matches(
@@ -61,6 +62,7 @@ const App = () => {
                       onChange={handleChange}
                       onBlur={handleBlur}
                       value={values.ipAddress}
+                      placeholder={initialIpAddress}
                     />
                   </Form.Group>
                   {errors.ipAddress && touched.ipAddress ? (
