@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from "react";
 import PropTypes from "prop-types";
-import { Card, ListGroup, Alert, Accordion, Button } from "react-bootstrap";
+import { Card, ListGroup, Alert } from "react-bootstrap";
 
 const WhoisIp = (props) => {
   const [hasError, setErrors] = useState(false);

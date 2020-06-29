@@ -1,0 +1,13 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`GeoIp when Ip Address is set 1`] = `
+<div
+  className="mb-3 card"
+>
+  <div
+    className="card-header"
+  >
+    Whois
+  </div>
+</div>
+`;
