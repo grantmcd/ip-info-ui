@@ -17,16 +17,20 @@ const GeoIp = (props) => {
       geoIpRes
         .json()
         .then((res) => {
-          setGeoData(res);
-          setMarkers([
-            {
-              id: 1,
-              city: res.city.names.en,
-              color: "red",
-              coordinates: [res.location.latitude, res.location.longitude],
-              value: 50,
-            },
-          ]);
+          if (res) {
+            setGeoData(res);
+            setMarkers([
+              {
+                id: 1,
+                city: res.city !== undefined ? res.city.names.en : "",
+                color: "red",
+                coordinates: [res.location.latitude, res.location.longitude],
+                value: 50,
+              },
+            ]);
+          } else {
+            setErrors("Internal Server Error. Try another IP.");
+          }
         })
         .catch((err) => setErrors(err));
     }
@@ -61,7 +65,9 @@ const GeoIp = (props) => {
       {geoData && (
         <ListGroup variant="flush">
           <ListGroup.Item>Country: {geoData.country.names.en}</ListGroup.Item>
-          <ListGroup.Item>City: {geoData.city.names.en}</ListGroup.Item>
+          {geoData.city !== undefined && (
+            <ListGroup.Item>City: {geoData.city.names.en}</ListGroup.Item>
+          )}
           <ListGroup.Item>Latitude: {geoData.location.latitude}</ListGroup.Item>
           <ListGroup.Item>
             Longitude: {geoData.location.longitude}

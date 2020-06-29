@@ -16,7 +16,11 @@ const WhoisIp = (props) => {
       geoIpRes
         .json()
         .then((res) => {
-          setWhoisData(res);
+          if (res) {
+            setWhoisData(res);
+          } else {
+            setErrors("Internal Server Error. Try another IP.");
+          }
         })
         .catch((err) => setErrors(err));
     }
