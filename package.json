@@ -16,7 +16,7 @@
     "react-globe": "^4.0.0",
     "react-scripts": "3.4.1",
     "three": "^0.118.3",
-    "yup": "^0.29.1"
+    "yup": "^0.32.9"
   },
   "scripts": {
     "start": "react-scripts start",
